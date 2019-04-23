@@ -47,16 +47,25 @@ class Main extends Component {
     revisaArray(array, elemento) {
         return array.filter(item => item === elemento).length;
     }
+
+
     añadirFavorito = () => {
         const comicActual = this.state.comic.num
         let veces = this.revisaArray(this.state.favoritos, comicActual)
         console.log(veces);
-        if (veces < 1) {
-            const nuevoArr = this.state.favoritos.concat(comicActual)
-            this.setState({ favoritos: nuevoArr })
+        if (veces <= 1) {
+            this.setState({
+                favoritos: [...this.state.favoritos, this.obtenerFavorito()]
+            })
+            console.log(this.state.favoritos)
         }
-        console.log("favoritos", this.state.favoritos);
 
+    }
+    obtenerFavorito = () => {
+        const comicActual = this.state.comic.num
+        console.log("comic actual ->", comicActual);
+
+        return comicActual
     }
     render() {
         return (
@@ -74,7 +83,7 @@ class Main extends Component {
                     <img src={this.state.comic.img} alt="" />
                 </div>
                 <div>
-                    <Favorites
+                    <Favorites favoritos={this.state.favoritos}
                     //aca recibe los props que sería el state.favorites
                     />
                 </div>

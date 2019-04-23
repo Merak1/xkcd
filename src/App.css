@@ -15,3 +15,12 @@
 
 .Main {
 }
+.Favoritos{
+  width: 50%;
+  margin: auto;
+  background-color: azure;
+  color: #0f2e6d;
+}
+.Favoritos li {
+  list-style: none;
+}
