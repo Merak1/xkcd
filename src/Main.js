@@ -67,6 +67,13 @@ class Main extends Component {
 
         return comicActual
     }
+    eliminarFavorito = (e) => {
+        console.log("info onclick ", e);
+        this.setState({
+            favoritos: this.state.favoritos.filter(favorito => favorito !== e)
+        })
+
+    }
     render() {
         return (
             <div className="Main">
@@ -83,7 +90,7 @@ class Main extends Component {
                     <img src={this.state.comic.img} alt="" />
                 </div>
                 <div>
-                    <Favorites favoritos={this.state.favoritos}
+                    <Favorites eliminarFavorito={this.eliminarFavorito} favoritos={this.state.favoritos}
                     //aca recibe los props que sería el state.favorites
                     />
                 </div>

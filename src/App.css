@@ -18,8 +18,8 @@
 .Favoritos{
   width: 50%;
   margin: auto;
-  background-color: azure;
-  color: #0f2e6d;
+  background-color: rgb(92, 91, 151);
+  color: #dee8fb;
 }
 .Favoritos li {
   list-style: none;
