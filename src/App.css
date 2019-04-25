@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+
 .App {
   text-align: center;
   background-color: #6986c2;
-  min-height: 90vh;
   color: white;
+  font-family: 'Lato', sans-serif;
+
 }
 
 
@@ -12,15 +16,80 @@
   flex-direction: column; */
   font-size: calc(10px + 2vmin);
 }
+button {
+  font-family: 'Lato', sans-serif;
 
+}
 .Main {
+  min-height: 90vh;
+}
+.Main .botones{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  
+}
+.Main .button {
+  margin: 1em;
+  background-color: #0a3e9e;
+}
+.Main .button_control {
+  padding: .7em;
+  border-radius: 0.5em;
+  cursor:pointer;
+}
+.Main .comic_display{
+  background-color: black;
+  display: grid;
+  grid-template-columns: 15% 70%  15%;
+  grid-template-rows: auto;
+}
+.Main .comic_image{
+  grid-column: 2/3 ;
+  margin: auto;
+}
+.Main .button_favoritos {
+  padding: .7em;
+  border-radius: 0.5em;
+  width: 70%;
+  grid-column: 1/ 2;
+}
+.Main .button_añadir-favoritos {
+  padding: .7em;
+  border-radius: 0.5em;
+  width: 5em;
+  grid-column: 3/ 4;
+  cursor:pointer;
 }
 .Favoritos{
-  width: 50%;
+  width: 100%;
   margin: auto;
-  background-color: rgb(92, 91, 151);
   color: #dee8fb;
 }
-.Favoritos li {
+/* .Favoritos li {
   list-style: none;
+  border: #000000 1px solid;
+  padding: .5em;
+  cursor:pointer;
+}
+.Favoritos li:hover{
+  background: #dee8fb
+} */
+.Favoritos .favoritos-list{
+  border: #000000 1px solid;
+  cursor:pointer;
+  display: flex;
+  justify-content: center;
+  margin: .3em;
+}
+.Favoritos .favoritos-list p {
+   margin: 0;
+}
+.Favoritos .favoritos-delete{
+  padding-left: 4em;
+
+  cursor:pointer;
+}
+.Favoritos ul {
+  -webkit-padding-start: 0;
 }
