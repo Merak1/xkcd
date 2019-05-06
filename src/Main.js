@@ -8,7 +8,7 @@ import favorite from './favorite.png'
 
 class Main extends Component {
     state = {
-        comic: [""],
+        comic: [],
         maxData: 1,
         favoritos: [],
         loading: false
@@ -34,7 +34,6 @@ class Main extends Component {
         this.setState({ loading: true })
         const res = await axios.get(`https://xkcd.now.sh/${id}`);
         const data = await res.data
-        console.log(data);
         this.setState({ comic: data })
         this.setState({ loading: false })
     }
@@ -63,37 +62,26 @@ class Main extends Component {
     }
     añadirFavorito = () => {
         let veces = this.obtenerVeces()
-        console.log(veces, "veces");
         if (veces < 1) {
             this.setState({
                 favoritos: [...this.state.favoritos, this.obtenerFavorito()]
             })
-            console.log(this.state.favoritos)
         }
     }
     obtenerComicActual = () => {
         const comicActual = this.state.comic.num
-        console.log("comic actual ->", comicActual);
         return comicActual
     }
     obtenerFavorito = () => {
-        let favorito = this.obtenerComicActual()
-        console.log("favorito ->", favorito);
-        return favorito
-    }
-    obtenerFavoritoTitulo = () => {
-        let favorito = this.obtenerComicActual()
-        console.log("favorito ->", favorito);
+        const favorito = this.obtenerComicActual()
         return favorito
     }
     eliminarFavorito = (e) => {
-        console.log("info onclick ", e);
         this.setState({
             favoritos: this.state.favoritos.filter(favorito => favorito !== e)
         })
     }
     irFavorito = (favorito) => {
-        console.log("irfavorito")
         this.getComic(favorito)
     }
     demoMethod() {

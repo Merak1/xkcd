@@ -3,10 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Favorites extends Component {
 
-    componentDidMount() {
-
-    }
-
     render() {
         return (
             <div className="Favoritos">

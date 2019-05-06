@@ -8,15 +8,12 @@ library.add(faStroopwafel, faTrashAlt, faArrowAltCircleLeft, faArrowAltCircleRig
 class App extends Component {
 
   getData(link) {
-    console.log(link);
     return link
   }
   render() {
     return (
-      <div>
-        < div className="App">
-          <Main sendData={this.getData} />
-        </div>
+      < div className="App">
+        <Main sendData={this.getData} />
       </div>
     );
   }
