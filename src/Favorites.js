@@ -13,10 +13,12 @@ class Favorites extends Component {
                 <p>Favoritos</p>
                 <ul>
                     {this.props.favoritos.map((favoritos) =>
-                        <div className="favoritos-list" onClick={() => { this.props.irFavorito(favoritos) }}
-                        > <p className="favoritos-element">{favoritos}  &nbsp;</p>
-                            <FontAwesomeIcon className="favoritos_delete" icon="trash-alt"
-                                onClick={() => { this.props.eliminarFavorito(favoritos) }} />
+                        <div className="favoritos-list">
+                            <p className="favoritos-element" onClick={() => { this.props.irFavorito(favoritos) }}>{favoritos}  &nbsp;</p>
+                            <div className="favoritos-delete">
+                                <FontAwesomeIcon icon="trash-alt"
+                                    onClick={() => { this.props.eliminarFavorito(favoritos) }} />
+                            </div>
                         </div>
                     )}
                 </ul>
