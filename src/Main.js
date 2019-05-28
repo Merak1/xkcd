@@ -97,7 +97,7 @@ class Main extends Component {
                     spinnerColor='#dedde9'
                     textColor='#dedde9'
                     logoSrc='https://i.imgur.com/tHDkeFo.gif'
-                    text='¯\_(ツ)_/¯'>
+                    text=' ¯\_(ツ)_/¯ '>
                 </LoadingScreen>
                 <p className="Title">{this.state.comic.title} ( {this.state.comic.num}  ) </p>
                 <div className="botones">
