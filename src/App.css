@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
-@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+
  body {
+  --primario: #0D0630;
+  --secundario: #511730;
+  --terciario: #8E443D;
+  --extra: #E0D68A;
+
   max-width: 100%;
   overflow-x: hidden;
-  background-color: #000000;
+  background-color: var(--primario);
 }
 .App {
   text-align: center;
-  color: white;
+  color: var(--extra);
   font-family: 'Lato', sans-serif;
   font-size: 1.2em;
 }
@@ -15,8 +20,8 @@
   font-size: calc(10px + 2vmin);
 }
 .Title{
-  font-family: 'Rock Salt', cursive;
-  font-size: 3em;
+  /* font-family: 'Ro Salt', cursive; */
+  font-size: 2em;
   margin: 0;
   padding-top: 1em;
 }
@@ -31,7 +36,7 @@
 }
 .Main .button {
   margin: 1em;
-  background-color: #0a3e9e;
+  background-color: var(--secundario);
 }
 .Main .button_control {
   padding: .7em;
@@ -39,10 +44,8 @@
   cursor:pointer;
 }
 .Main .comic_display{
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.473);
   display: flex;
-  grid-template-columns: 15% 70%  15%;
-  grid-template-rows: auto;
 }
 .Main .comic_image{
   margin: auto;
@@ -51,46 +54,57 @@
   padding: 0;
   border-radius: 0.5em;
   width: 15%;
+  height: fit-content;
+  margin-left: 5px;
+  margin-right: auto;
 }
 .Main .favorite{
   width: 24px;
 }
+.image_display{
+  margin: auto 0px;
+}
 .Main .button_añadir-favoritos {
   padding: .7em;
   border-radius: 0.5em;
-  cursor:pointer;
-  height: 3em;
+  cursor: pointer;
+  height: fit-content;
+  margin-right: 5px;
+  margin-left: auto;
+  width: 15%;
 }
 .Favoritos{
   width: 100%;
   margin: auto;
-  color: #dee8fb;
+
 }
 .Favoritos .favoritos-list{
-  border: #000000 1px solid;
-  border-radius: 0.5em;
+  border-bottom: var(--primario) 1.5px solid;
+  border-left: var(--primario) 1.5px solid;
   display: flex;
   justify-content: center;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin: 0.3em;
+  cursor:pointer;
+}
+.Favoritos .favoritos-list:hover{
+  background-color:var(--terciario);
 }
 .favoritos-delete:hover{
   color: #ff0000;
 }
 .Favoritos .favoritos-list p {
    margin: 0;
-   cursor:pointer;
 }
 .Favoritos .favoritos-delete {
-  margin-left: 5em;
-  cursor:pointer;
-  padding-right: 0.5em;
+  margin-left: 20%;
+  cursor: pointer;
 }
 .Favoritos ul {
   -webkit-padding-start: 0;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .App {
     text-align: center;
     color: white;
@@ -99,7 +113,7 @@
   }
   .Title{
     font-family: 'Rock Salt', cursive;
-    font-size: 2.5em;
+    font-size: 25px;
     margin: 0;
   }
   .Main .comic_display{
@@ -107,31 +121,41 @@
     align-items: center;
     flex-direction: column;
   }
-  .Main .button_favoritos {
+  .Main .button_control {
     padding: .7em;
+    font-size: 10px;
+}
+  .Main .button_favoritos {
+    font-size: 15px;
+    padding: .6em;
     border-radius: 0.5em;
-    width: 85%;
+    width: 90%;
     order: 3;
   }
   .Main .comic_image{
     margin: 0.5px;
-    width: 80vw;
+    width: 70vw;
     order: 1;
   }
   .Main .button_añadir-favoritos {
+    font-size: 15px;
     padding: .7em;
     border-radius: 0.5em;
     width: 5em;
     cursor:pointer;
     height: 3em;
-    margin-top: 1em;
+    margin:auto;
     order:2;
   }
   .Main .button_favoritos {
+    margin: 5px;
     padding: 0;
     border-radius: 0.5em;
   }
   .Main .favorite{
     width: 20%;
+  }
+  .Favoritos .favoritos-list {
+    background-color: var(--terciario);
   }
 }

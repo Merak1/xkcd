@@ -5,22 +5,24 @@ import Favorites from './Favorites.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import LoadingScreen from 'react-loading-screen';
 import favorite from './favorite.png'
-import { log } from 'util';
 
 class Main extends Component {
   state = {
     comic: [],
     maxData: 1,
     favoritos: [],
+    tituloFavoritos: [],
     loading: false
-  }
-  componentDidUpdate() {
-    this.demoMethod()
-    this.obtenerVeces()
   }
   componentDidMount() {
     this.lastComic()
   }
+  componentDidUpdate() {
+    this.demoMethod()
+    this.obtenerVeces()
+    console.log(this.state.comic)
+  }
+
   lastComic = async () => {
     const res = await axios.get("https://xkcd.now.sh/?comic=latest");
     const data = await res.data
@@ -65,7 +67,8 @@ class Main extends Component {
     let veces = this.obtenerVeces()
     if (veces < 1) {
       this.setState({
-        favoritos: [...this.state.favoritos, this.obtenerFavorito()]
+        favoritos: [...this.state.favoritos, this.obtenerFavorito()],
+        tituloFavoritos: [...this.state.tituloFavoritos, this.obtenerTituloFavorito()]
       })
     }
   }
@@ -73,9 +76,17 @@ class Main extends Component {
     const comicActual = this.state.comic.num
     return comicActual
   }
+  obtenerTituloComicActual = () => {
+    const tituloComicActual = this.state.comic.title
+    return tituloComicActual
+  }
   obtenerFavorito = () => {
     const favorito = this.obtenerComicActual()
     return favorito
+  }
+  obtenerTituloFavorito = () => {
+    const tituloFavorito = this.obtenerTituloComicActual()
+    return tituloFavorito
   }
   eliminarFavorito = (e) => {
     this.setState({
@@ -88,6 +99,8 @@ class Main extends Component {
   demoMethod() {
     this.props.sendData(this.state.comic.num);
   }
+
+
   render() {
     return (
 
@@ -109,8 +122,10 @@ class Main extends Component {
           <div className="button button_control" onClick={this.lastComic}> <FontAwesomeIcon icon="step-forward" />  </div>
         </div>
         <div className="comic_display">
-          <div className="button button_favoritos"  ><Favorites irFavorito={this.irFavorito} eliminarFavorito={this.eliminarFavorito} favoritos={this.state.favoritos} /></div>
-          <img src={this.state.comic.img} alt="" className="comic_image" />
+          <div className="button button_favoritos"  ><Favorites irFavorito={this.irFavorito} eliminarFavorito={this.eliminarFavorito} favoritos={this.state.favoritos} tituloFavoritos={this.state.tituloFavoritos} /></div>
+          <div className="image_display">
+            <img src={this.state.comic.img} alt="" className="comic_image" />
+          </div>
           <div className="button button_añadir-favoritos" onClick={this.añadirFavorito}> <img alt="" className="favorite" src={favorite} ></img>  Añadir a favoritos</div>
         </div>
 
