@@ -1,0 +1,16 @@
+{
+  "main.css": "/xkcd/static/css/main.ea02e0bb.chunk.css",
+  "main.js": "/xkcd/static/js/main.a199b185.chunk.js",
+  "main.js.map": "/xkcd/static/js/main.a199b185.chunk.js.map",
+  "runtime~main.js": "/xkcd/static/js/runtime~main.da37fd3e.js",
+  "runtime~main.js.map": "/xkcd/static/js/runtime~main.da37fd3e.js.map",
+  "static/css/2.0c3c0fac.chunk.css": "/xkcd/static/css/2.0c3c0fac.chunk.css",
+  "static/js/2.4f70175d.chunk.js": "/xkcd/static/js/2.4f70175d.chunk.js",
+  "static/js/2.4f70175d.chunk.js.map": "/xkcd/static/js/2.4f70175d.chunk.js.map",
+  "index.html": "/xkcd/index.html",
+  "precache-manifest.e1dbd4d1f81cf3b6891d630557bddd36.js": "/xkcd/precache-manifest.e1dbd4d1f81cf3b6891d630557bddd36.js",
+  "service-worker.js": "/xkcd/service-worker.js",
+  "static/css/2.0c3c0fac.chunk.css.map": "/xkcd/static/css/2.0c3c0fac.chunk.css.map",
+  "static/css/main.ea02e0bb.chunk.css.map": "/xkcd/static/css/main.ea02e0bb.chunk.css.map",
+  "static/media/favorite.png": "/xkcd/static/media/favorite.c9531487.png"
+}
