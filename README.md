@@ -1,5 +1,6 @@
  ## Visualizador de Cómics XKCD
 
+
 Una sencilla web app que permite accesar a todo el catálogo de webcomics xkcd, con el más reciente siempre primero con la funcionalidad de guardar favoritos y  poder accesar a ellos, además de eliminarlos. 
 
 ## Proyecto
@@ -8,4 +9,6 @@ El visualizador quedó como una simple web app de una sóla página, todas las f
 
 ## URL 
 
-https://react-front-end-test.firebaseapp.com
+https://merak1.github.io/xkcd/
+
+# 🐳
